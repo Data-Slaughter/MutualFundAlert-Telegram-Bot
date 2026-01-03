@@ -13,8 +13,12 @@ FUNDS = [
     {"code": "152600", "name": "HDFC Manufacturing fund", "threshold": 12}
 ]
 
-BOT_TOKEN = os.environ["BOT_TOKEN"]
-CHAT_ID = os.environ["CHAT_ID"]
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+CHAT_ID = os.getenv("CHAT_ID")
+
+if not BOT_TOKEN or not CHAT_ID:
+    raise RuntimeError("Missing BOT_TOKEN or CHAT_ID GitHub secrets")
+
 
 STATE_FILE = "state.csv"
 
