@@ -2,7 +2,7 @@ name: Mutual Fund Alerts
 
 on:
   schedule:
-    - cron: "0 1 */2 * *"   # Runs daily at 7:00 AM IST
+    - cron: "0 1 * * 1,3,5"   # Runs on Monday, Wednesday, Friday at 7:30 AM IST
   workflow_dispatch:
 
 jobs:
